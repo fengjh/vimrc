@@ -23,14 +23,18 @@ Bundle 'hallison/vim-markdown'
 Bundle 'groenewege/vim-less'
 Bundle 'bbommarito/vim-slim'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'jpo/vim-railscasts-theme'
+Bundle 'vim-scripts/copypath.vim'
 " fuzzy_filder
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 
 Bundle 'wincent/Command-T'
 " cd ~/.vim/bundle/Command-T/ruby/ ; ruby extconf.rb ; make
+" themes
+" Bundle 'altercation/vim-colors-solarized'
+" Bundle 'tomasr/molokai'
+Bundle 'jpo/vim-railscasts-theme'
+Bundle 'jasonkuhrt/Tomorrow-Theme'
 
 " 字体
 set guifont=monaco:h14
@@ -69,6 +73,8 @@ set smarttab
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
+let mapleader=";"
+
 autocmd FileType make     set noexpandtab
 autocmd FileType python   set noexpandtab
 autocmd FileType eruby  set tabstop=2 shiftwidth=2
@@ -88,8 +94,9 @@ endfun
 
 autocmd BufWritePre * call StripTrailingWhitespace()
 
-" 快捷键
-let mapleader=";"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" plugin settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " open/close NERDTree
 map <leader>o :NERDTreeToggle<CR>
@@ -97,14 +104,9 @@ map <leader>o :NERDTreeToggle<CR>
 " fuzzy_filder
 map <D-i> :FufCoverageFile<CR>
 
-" tab
-map J :tabnext<CR>
-map F :tabpre<CR>
-map <C-T> :tabnew<CR>
-
-" vimrc
-map <silent><leader>rc :tabnew ~/.vimrc<CR>
-map <silent><leader>ss :source ~/.vimrc<CR>
+" copypath
+map <silent><leader>c :CopyPath<CR>
+map <silent><leader>f :CopyFileName<CR>
 
 " let g:rubycomplete_buffer_loading = 1
 " let g:rubycomplete_classes_in_global = 1
@@ -113,7 +115,18 @@ map <silent><leader>ss :source ~/.vimrc<CR>
 " nmap <S-f> :CommandT<cr>
 let g:fuf_previewHeight = 0
 
-let g:solarized_termcolors=256
+" theme setting
+" let g:solarized_termcolors=256
+let g:molokai_original = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 快捷键
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" tab
+map J :tabnext<CR>
+map F :tabpre<CR>
+map <C-T> :tabnew<CR>
 
 nmap <F2> :w<cr>
 nmap <F3> :wa<cr>
@@ -126,3 +139,9 @@ nmap <F11> gg=G<C-o>
 cmap cdrb cd ~/Codes/ruby<CR>
 cmap cdkz cd ~/Codes/Rails/kinzin<CR>
 cmap cdgg cd ~/Codes/Rails/gogotree<CR>
+
+" vimrc
+map <silent><leader>rc :tabnew ~/.vimrc<CR>
+map <silent><leader>ss :source ~/.vimrc<CR>
+map <silent><leader>grc :tabnew ~/.gvimrc<CR>
+" source ~/.gvimrc

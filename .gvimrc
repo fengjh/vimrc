@@ -4,11 +4,13 @@ set guioptions-=T "gui的工具栏
 "set guioptions-=L "gui的左边的滑动条
 set guioptions-=m "gui的菜单
 
-set cul
+" set cul
 
-" yellow
+""""""""""""""""""""""""""""
+" themes
+""""""""""""""""""""""""""""
+" system
 " colorscheme desert
-" black
 " colorscheme slate
 
 " solarized
@@ -17,4 +19,7 @@ set cul
 " colorscheme solarized
 
 " railscasts
-colorscheme railscasts
+" colorscheme railscasts
+
+" tomorrow
+colorscheme Tomorrow-Night-Eighties
