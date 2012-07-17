@@ -8,6 +8,6 @@ task :deploy do
 
   # snipmate-snippets
   system 'git submodule init; git submodule update'
-  system 'mkdir snipmate-snippets/
+  system 'mkdir snipmate-snippets/'
   system 'cd snipmate-snippets/; rake deploy_local; cd -'
 end
