@@ -5,4 +5,16 @@ set guioptions-=T "gui的工具栏
 set guioptions-=m "gui的菜单
 
 set cul
-colorscheme desert
+
+" yellow
+" colorscheme desert
+" black
+" colorscheme slate
+
+" solarized
+" set background=dark
+" set background=light
+" colorscheme solarized
+
+" railscasts
+colorscheme railscasts

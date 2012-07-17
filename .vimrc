@@ -15,18 +15,25 @@ Bundle 'gmarik/vundle'
 
 Bundle 'Align'
 Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'msanders/snipmate.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'hallison/vim-markdown'
 Bundle 'groenewege/vim-less'
 Bundle 'bbommarito/vim-slim'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'jpo/vim-railscasts-theme'
+" fuzzy_filder
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 
 Bundle 'wincent/Command-T'
 " cd ~/.vim/bundle/Command-T/ruby/ ; ruby extconf.rb ; make
 
 " 字体
-set guifont=monaco\ 10
+set guifont=monaco:h14
 
 set nobackup
 set nowritebackup
@@ -42,7 +49,10 @@ set vb t_vb=
 set nu
 "马上跳到搜索匹配
 set incsearch
-
+"在查找时,高亮显示全部匹配字符
+set hlsearch
+"光标与顶部和底部始终保持一定行数
+set scrolloff=3
 "根据文件格式载入插件和缩进
 filetype plugin indent on
 set autoindent
@@ -79,17 +89,31 @@ endfun
 autocmd BufWritePre * call StripTrailingWhitespace()
 
 " 快捷键
-nmap <Up> <c-w>k
-nmap <Down> <c-w>j
-nmap <Right> <c-w>l
-nmap <Left> <c-w>h
+let mapleader=";"
 
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
+" open/close NERDTree
+map <leader>o :NERDTreeToggle<CR>
 
-nmap <S-f> :CommandT<cr>
+" fuzzy_filder
+map <D-i> :FufCoverageFile<CR>
+
+" tab
+map J :tabnext<CR>
+map F :tabpre<CR>
+map <C-T> :tabnew<CR>
+
+" vimrc
+map <silent><leader>rc :tabnew ~/.vimrc<CR>
+map <silent><leader>ss :source ~/.vimrc<CR>
+
+" let g:rubycomplete_buffer_loading = 1
+" let g:rubycomplete_classes_in_global = 1
+" let g:rubycomplete_rails = 1
+
+" nmap <S-f> :CommandT<cr>
 let g:fuf_previewHeight = 0
+
+let g:solarized_termcolors=256
 
 nmap <F2> :w<cr>
 nmap <F3> :wa<cr>
@@ -97,3 +121,8 @@ nmap <F4> :q<cr>
 nmap <F6> :cp<cr>
 nmap <F7> :cn<cr>
 nmap <F11> gg=G<C-o>
+
+" alias
+cmap cdrb cd ~/Codes/ruby<CR>
+cmap cdkz cd ~/Codes/Rails/kinzin<CR>
+cmap cdgg cd ~/Codes/Rails/gogotree<CR>
