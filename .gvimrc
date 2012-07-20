@@ -4,14 +4,15 @@ set guioptions-=T "gui的工具栏
 "set guioptions-=L "gui的左边的滑动条
 set guioptions-=m "gui的菜单
 
-" set cul
+set nocul
 
 """"""""""""""""""""""""""""
 " themes
 """"""""""""""""""""""""""""
 " system
 " colorscheme desert
-" colorscheme slate
+colorscheme slate
+hi PreProc guibg=grey15 guifg=#cc6666
 
 " solarized
 " set background=dark
@@ -22,4 +23,4 @@ set guioptions-=m "gui的菜单
 " colorscheme railscasts
 
 " tomorrow
-colorscheme Tomorrow-Night-Eighties
+" colorscheme Tomorrow-Night-Eighties

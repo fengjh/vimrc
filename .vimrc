@@ -36,6 +36,7 @@ Bundle 'wincent/Command-T'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'jasonkuhrt/Tomorrow-Theme'
 
+set encoding=utf-8
 " 字体
 set guifont=monaco:h14
 
@@ -71,7 +72,7 @@ set expandtab
 set smarttab
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·
+" set list listchars=tab:»·,trail:·
 
 let mapleader=";"
 
