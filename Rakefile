@@ -11,3 +11,13 @@ task :deploy do
   system 'mkdir snipmate-snippets/'
   system 'cd snipmate-snippets/; rake deploy_local; cd -'
 end
+
+namespace :push do
+  desc "Push local vim config file to github."
+  task :config do
+    system "cp ~/.vimrc ~/.gvimrc ."
+    system "git add .vimrc .gvimrc"
+    system "git commit -m 'Rake: update vim config file.'"
+    system "git push"
+  end
+end
