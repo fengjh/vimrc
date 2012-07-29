@@ -12,7 +12,7 @@ set nocul
 " system
 " colorscheme desert
 colorscheme slate
-hi PreProc guibg=grey15 guifg=#cc6666
+hi PreProc guibg=grey15 guifg=#f3dead
 
 " solarized
 " set background=dark

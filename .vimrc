@@ -13,6 +13,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'Align'
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
@@ -36,9 +37,14 @@ Bundle 'wincent/Command-T'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'jasonkuhrt/Tomorrow-Theme'
 
+" 设置编码
 set encoding=utf-8
+" 设置文件编码
+set fenc=utf-8
 " 字体
 set guifont=monaco:h14
+" 不自动换行
+set nowrap
 
 set nobackup
 set nowritebackup
@@ -105,9 +111,21 @@ map <leader>o :NERDTreeToggle<CR>
 " fuzzy_filder
 map <D-i> :FufCoverageFile<CR>
 
+""""" extend copypath start
+function CopyCurrentFilePath()
+    let @*=expand('%:p:h')
+    " copy unnamed register.
+    if g:copypath_copy_to_unnamed_register
+        let @"=expand('%:p:h')
+    endif
+endfunction
+
+command! -nargs=0 CopyCurrentFilePath call CopyCurrentFilePath()
+""""" extend copypath end
 " copypath
 map <silent><leader>c :CopyPath<CR>
 map <silent><leader>f :CopyFileName<CR>
+map <silent><leader>h :CopyCurrentFilePath<CR>
 
 " let g:rubycomplete_buffer_loading = 1
 " let g:rubycomplete_classes_in_global = 1
