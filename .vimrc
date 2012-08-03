@@ -89,6 +89,7 @@ autocmd FileType ruby,rdoc set tabstop=2 shiftwidth=2
 autocmd FileType html set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
 autocmd FileType coffee set tabstop=2 shiftwidth=2
+autocmd FileType php set tabstop=4 shiftwidth=4
 au! BufRead,BufNewFile *.json setfiletype json
 
 fun! StripTrailingWhitespace()
@@ -112,13 +113,13 @@ map <leader>o :NERDTreeToggle<CR>
 map <D-i> :FufCoverageFile<CR>
 
 """"" extend copypath start
-function CopyCurrentFilePath()
+fun! CopyCurrentFilePath()
     let @*=expand('%:p:h')
     " copy unnamed register.
     if g:copypath_copy_to_unnamed_register
         let @"=expand('%:p:h')
     endif
-endfunction
+endfun
 
 command! -nargs=0 CopyCurrentFilePath call CopyCurrentFilePath()
 """"" extend copypath end
