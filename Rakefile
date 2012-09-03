@@ -20,4 +20,11 @@ namespace :push do
     system "git commit -m 'Rake: update vim config file.'"
     system "git push"
   end
+
+  task :bash_aliases do
+    system "cp ~/.bash_aliases ."
+    system "git add .bash_aliases"
+    system "git commit -m 'Rake: push bash aliases file.'"
+    system "git push"
+  end
 end
