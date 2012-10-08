@@ -28,6 +28,7 @@ Bundle 'vim-scripts/copypath.vim'
 " fuzzy_filder
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'vimwiki'
 
 Bundle 'wincent/Command-T'
 " cd ~/.vim/bundle/Command-T/ruby/ ; ruby extconf.rb ; make
@@ -36,6 +37,8 @@ Bundle 'wincent/Command-T'
 " Bundle 'tomasr/molokai'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'jasonkuhrt/Tomorrow-Theme'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'bbommarito/vim-slim'
 
 " 设置编码
 set encoding=utf-8
@@ -121,12 +124,23 @@ fun! CopyCurrentFilePath()
     endif
 endfun
 
-command! -nargs=0 CopyCurrentFilePath call CopyCurrentFilePath()
+" command! -nargs=0 CopyCurrentFilePath call CopyCurrentFilePath()
+"
+" fun! CopyCurrentFileRelativePath()
+"     let @*=expand('%:p:h')
+"     " copy unnamed register.
+"     if g:copypath_copy_to_unnamed_register
+"         let @"=expand('%:p:h')
+"     endif
+" endfun
+"
+" command! -nargs=0 CopyCurrentFileRelativePath call CopyCurrentFileRelativePath()
 """"" extend copypath end
 " copypath
 map <silent><leader>c :CopyPath<CR>
 map <silent><leader>f :CopyFileName<CR>
 map <silent><leader>h :CopyCurrentFilePath<CR>
+map <silent><leader>r :CopyCurrentFileRelativePath<CR>
 
 " let g:rubycomplete_buffer_loading = 1
 " let g:rubycomplete_classes_in_global = 1
@@ -138,6 +152,13 @@ let g:fuf_previewHeight = 0
 " theme setting
 " let g:solarized_termcolors=256
 let g:molokai_original = 1
+
+" vimwiki
+let g:vimwiki_use_mouse = 1
+let g:vimwiki_camel_case = 0
+let g:vimwiki_CJK_length = 1
+let g:vimwiki_list = [{'path': '/Users/fengjunhui00700/Dropbox/vimwiki'}]
+let tlist_vimwiki_settings = 'wiki;h:Headers'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 快捷键
@@ -159,6 +180,9 @@ nmap <F11> gg=G<C-o>
 cmap cdrb cd ~/Codes/ruby<CR>
 cmap cdkz cd ~/Codes/Rails/kinzin<CR>
 cmap cdgg cd ~/Codes/Rails/gogotree<CR>
+cmap cdtl cd ~/Codes/ThePlant/lacoste<CR>
+cmap cdot cd ~/Codes/ThePlant/onitsukatiger<CR>
+cmap cdtis cd ~/Codes/ThePlant/tis<CR>
 
 " vimrc
 map <silent><leader>rc :tabnew ~/.vimrc<CR>
