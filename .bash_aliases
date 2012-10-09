@@ -12,6 +12,7 @@ alias rm='rm -i'
 alias psag='ps aux | grep'
 alias psa='ps aux'
 alias pse='ps -ef'
+alias cpwd='printf $PWD | pbcopy'
 # alias high_history="history | awk '{CMD[$2]++;count++;} END { for (a in CMD )print CMD[ a ]" " CMD[ a ]/count*100 "% " a }' | grep -v "./" | column -c3 -s " " -t |sort -nr | nl | head -n10"
 
 # =config
@@ -86,6 +87,12 @@ alias cds='cd $HOME/Codes/Rails/smart_at/'
 alias cdet='cd $HOME/Codes/Easwift/test'
 alias cdea='cd $HOME/Codes/Easwift/test_app'
 
+# ThePlant
+alias cdl='cd $HOME/Codes/ThePlant/lacoste'
+alias cdot='cd $HOME/Codes/ThePlant/onitsukatiger'
+alias cdtis='cd $HOME/Codes/ThePlant/tis'
+alias cdq='cd $HOME/Codes/ThePlant/qor'
+
 # =svn
 alias svnu='svn up'
 alias svnc='svn commit -m'
@@ -115,12 +122,12 @@ alias p='mplayer'
 
 # alias down='wget'
 # alias dlo='wget -o'
-alias dl='axel -n 200'
-alias dlh='axel -n 300'
-alias dlo='axel -n 200 -o '
-alias dlho='axel -n 300 -o '
-alias r='tail'
-alias e='exit'
+# alias dl='axel -n 200'
+# alias dlh='axel -n 300'
+# alias dlo='axel -n 200 -o '
+# alias dlho='axel -n 300 -o '
+# alias r='tail'
+# alias e='exit'
 
 # =ssh
 alias ssh_out='ssh -D 7070 kinzin@216.86.115.219'
